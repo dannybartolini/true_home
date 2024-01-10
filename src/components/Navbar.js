@@ -1,16 +1,16 @@
-import { menuItemsData } from "../menuItemsData";
-
 const Navbar = () => {
 	return (
-		<nav className="desktop-nav">
-			<ul className="menus">
-				{menuItemsData.map((menu, index) => {
-					return (
-						<li className="menu-items" key={index}>
-							<a href={menu.url}>{menu.title}</a>
-						</li>
-					);
-				})}
+		<nav className="nav">
+			<a href="/" className="site-title">
+				Site name
+			</a>
+			<ul>
+				<li className="active">
+					<a href="/listings"> listings</a>
+				</li>
+				<li>
+					<a href="/buyers">buyers</a>
+				</li>
 			</ul>
 		</nav>
 	);
