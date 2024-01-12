@@ -1,18 +1,26 @@
-import { menuItemsData } from "../menuItemsData";
-
 const Navbar = () => {
+	const path = window.location.pathname;
 	return (
-		<nav className="desktop-nav">
-			<ul className="menus">
-				{menuItemsData.map((menu, index) => {
-					return (
-						<li className="menu-items" key={index}>
-							<a href={menu.url}>{menu.title}</a>
-						</li>
-					);
-				})}
+		<nav className="nav">
+			<a href="/" className="site-title">
+				Site name
+			</a>
+			<ul>
+				<CustomLink href="/listings">Listings</CustomLink>
+				<CustomLink href="/buyers">Buyers</CustomLink>
 			</ul>
 		</nav>
+	);
+};
+
+const CustomLink = ({ href, children, ...props }) => {
+	const path = window.location.pathname;
+	return (
+		<li className={path === href ? "active" : ""}>
+			<a href={href} {...props}>
+				{children}
+			</a>
+		</li>
 	);
 };
 
