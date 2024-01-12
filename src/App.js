@@ -24,7 +24,9 @@ function App() {
 			<Navbar />
 
 			<h1>Hello there, this is a real estate app</h1>
-			<Component />
+			<div className="container">
+				<Component />
+			</div>
 		</div>
 	);
 }
