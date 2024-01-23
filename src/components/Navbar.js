@@ -1,25 +1,30 @@
+import { Link, useMatch, useResolvedPath } from "react-router-dom";
+
 const Navbar = () => {
 	const path = window.location.pathname;
 	return (
 		<nav className="nav">
-			<a href="/" className="site-title">
+			<Link to="/" className="site-title">
 				Site name
-			</a>
+			</Link>
 			<ul>
-				<CustomLink href="/listings">Listings</CustomLink>
-				<CustomLink href="/buyers">Buyers</CustomLink>
+				<CustomLink to="/listings">Listings</CustomLink>
+				<CustomLink to="/buyers">Buyers</CustomLink>
 			</ul>
 		</nav>
 	);
 };
 
-const CustomLink = ({ href, children, ...props }) => {
-	const path = window.location.pathname;
+const CustomLink = ({ to, children, ...props }) => {
+	//please review the concept of absolute vs relative paths and what this has to do with resolved path
+
+	const resolvedPath = useResolvedPath(to);
+	const isActive = useMatch({ path: resolvedPath.pathname, end: true });
 	return (
-		<li className={path === href ? "active" : ""}>
-			<a href={href} {...props}>
+		<li className={isActive ? "active" : ""}>
+			<Link to={to} {...props}>
 				{children}
-			</a>
+			</Link>
 		</li>
 	);
 };
