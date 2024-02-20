@@ -1,8 +1,9 @@
 import { useState } from "react";
 import App from "../App";
-import Item from "./Item";
+import BuyerItem from "./BuyerItem";
+import { v4 as uuidv4 } from "uuid";
 
-const ItemList = ({ buyers, setBuyers }) => {
+const AddBuyer = ({ buyers, setBuyers }) => {
 	//this is the form
 	//how do I pass teh value from the buyer input form to the buyerlist wrapper? use props try to do it yourself
 	// the value and setvalue sate should be in the wrapper component
@@ -10,9 +11,10 @@ const ItemList = ({ buyers, setBuyers }) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(buyers);
-		setBuyers([...buyers, value]);
+
+		setBuyers([...buyers, { name: value, id: uuidv4() }]);
 		setValue("");
+		console.log(buyers);
 	};
 	return (
 		<form className="buyersList" onSubmit={handleSubmit}>
@@ -30,4 +32,4 @@ const ItemList = ({ buyers, setBuyers }) => {
 	);
 };
 
-export default ItemList;
+export default AddBuyer;
