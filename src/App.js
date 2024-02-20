@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar";
 import "./App.css";
-import ListingsList from "./components/ListingTest";
-import BuyersList from "./components/BuyersTest";
+import ListingsList from "./components/ListingsWrapper";
+import BuyersWrapper from "./components/BuyersWrapper";
 import Home from "./components/Home";
 import { Route, Routes } from "react-router-dom";
 
@@ -15,7 +15,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/listings" element={<ListingsList />} />
-					<Route path="/buyers" element={<BuyersList />} />
+					<Route path="/buyers" element={<BuyersWrapper />} />
 				</Routes>
 			</div>
 		</div>

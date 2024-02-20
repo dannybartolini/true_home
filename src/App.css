@@ -100,23 +100,13 @@ body {
 }
 
 .buyerInput {
-	/* display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background: none;
-	color: #000;
-	padding: 0.5rem 1rem;
-	border-radius: 5px;
-	margin-bottom: 1rem;
-	width: 300px; */
-
 	outline: none;
 	background: none;
 	border: 1px solid #00000069;
 	padding: 0.5rem 1rem;
 	margin-top: 1rem;
 	margin-bottom: 2rem;
-	width: 500px;
+	width: 450px;
 	color: #000000;
 }
 
@@ -141,4 +131,8 @@ body {
 	padding: 0.75rem 1rem;
 	border-radius: 5px;
 	margin-bottom: 1rem;
+}
+
+.fa-trash {
+	margin-left: 0.75rem;
 }
