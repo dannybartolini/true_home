@@ -136,3 +136,8 @@ body {
 .fa-trash {
 	margin-left: 0.75rem;
 }
+
+.delete-icon,
+.edit-icon {
+	cursor: pointer;
+}

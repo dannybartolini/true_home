@@ -4,6 +4,7 @@ import ListingsList from "./components/ListingsWrapper";
 import BuyersWrapper from "./components/BuyersWrapper";
 import Home from "./components/Home";
 import { Route, Routes } from "react-router-dom";
+import BuyerProperties from "./components/BuyerProperties";
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 					<Route path="/" element={<Home />} />
 					<Route path="/listings" element={<ListingsList />} />
 					<Route path="/buyers" element={<BuyersWrapper />} />
+					<Route path="/buyerProperties" element={<BuyerProperties />} />
 				</Routes>
 			</div>
 		</div>

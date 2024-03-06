@@ -11,10 +11,11 @@ const AddBuyer = ({ buyers, setBuyers }) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-
-		setBuyers([...buyers, { name: value, id: uuidv4() }]);
-		setValue("");
-		console.log(buyers);
+		if (value) {
+			setBuyers([...buyers, { name: value, id: uuidv4() }]);
+			setValue("");
+			console.log(buyers);
+		}
 	};
 	return (
 		<form className="buyersList" onSubmit={handleSubmit}>
